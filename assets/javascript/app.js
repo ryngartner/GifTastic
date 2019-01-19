@@ -1,6 +1,6 @@
-function renderButtons() {
+// function renderButtons() {
    
-};
+// };
 
 
 $("button").on("click", function() {
@@ -12,10 +12,9 @@ $("button").on("click", function() {
   $.ajax({
       url: queryURL,
       method: "GET"
-  })
-      .then(function(response) {
+  }).then(function(response) {
           var results = response.data;
-          
+          console.log(response);
           for (var i = 0; i < results.length; i++) {
             if (results[i].rating !== "r") {
                 var gifDiv = $("<div>");

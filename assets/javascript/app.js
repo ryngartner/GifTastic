@@ -1,6 +1,6 @@
 function renderButtons() {
-    $
-}
+   
+};
 
 
 $("button").on("click", function() {
@@ -30,3 +30,4 @@ $("button").on("click", function() {
           };
         });
     });
+

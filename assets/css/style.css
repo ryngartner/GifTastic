@@ -4,3 +4,7 @@
 body {
 background-image: url("http://images5.fanpop.com/image/photos/32000000/The-Kramer-seinfeld-32009188-1680-1050.jpg");
 };
+
+button {
+    color: blue;
+};

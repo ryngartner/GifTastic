@@ -16,17 +16,26 @@ $("button").on("click", function() {
           var results = response.data;
           console.log(response);
           for (var i = 0; i < results.length; i++) {
-            if (results[i].rating !== "r") {
+			// var seinfeldDiv = $("<div>");
+            // if (results[i].rating !== "r") {
                 var gifDiv = $("<div>");
                 var rating = results[i].rating;
                 var p = $("<p>").text("Rating: " + rating);
                 var personImage = $("<img>");
-                personImage.attr("src", results[i].images.fixed_height.url);
+
+			//add data-still and data-animate 
+				personImage.attr("src", results[i].images.fixed_height_still.url);
+				personImage.attr("data-still", results[i].images.fixed_height_still.url);
+				personImage.attr("data-animate", results[i].images.fixed_height.url);
+				personImage.attr("data-state", "still");
                 gifDiv.append(p);
                 gifDiv.append(personImage);
                 $("#container").prepend(gifDiv);
             };
-          };
+          
         });
     });
 
+
+
+   

@@ -6,7 +6,7 @@ var seinfeldCharacter = "";
 var buttonGenerator = function(){
 	$("#buttonArea").empty();
 	for(i = 0; i < seinfeld.length; i++) {
-		button = $("<button type=" + "button" + ">" + seinfeld[i] + "</button>").addClass("btn btn-warning").attr("data",seinfeld[i]);
+		button = $("<button type=" + "button" + ">" + seinfeld[i] + "</button>").attr("data",seinfeld[i]);
 		$("#buttonArea").append(button);
 	};
 }

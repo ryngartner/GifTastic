@@ -1,7 +1,27 @@
-// function renderButtons() {
-   
-// };
 
+var seinfeld = ["Newman"];
+var button;
+var seinfeldCharacter = "";
+
+var buttonGenerator = function(){
+	$("#container").empty();
+	for(i = 0; i < seinfeld.length; i++) {
+		button = $("<button type=" + "button" + ">" + seinfeld[i] + "</button>").addClass("btn btn-warning").attr("data",seinfeld[i]);
+		$("#container").append(button);
+	};
+}
+
+$("#add-seinfeld").on("click", function(event){
+	event.preventDefault();
+	console.log("#add-seinfeld");
+	seinfeldCharacter = $("#seinfeld-input").val();
+	seinfeld.push(seinfeldCharacter);
+	console.log(seinfeld);
+
+	buttonGenerator();
+
+
+})
 
 $("button").on("click", function() {
   var person = $(this).attr("data-seinfeld");
@@ -38,7 +58,7 @@ $("button").on("click", function() {
                 $("#container").prepend(gifDiv);
 			};
 			
-// Click to animate - click to pause
+// Click to animate - Click to pause
 	$("#container").on("click", ".gif", function(event){
 event.preventDefault();
 
@@ -52,9 +72,14 @@ event.preventDefault();
 			$(this).attr("data-state", "still");
 		}
 	})
-          
+
+
+
+
         });
-    });
+	});
+	
+buttonGenerator();
 
 
 

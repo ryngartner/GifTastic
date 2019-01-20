@@ -28,10 +28,30 @@ $("button").on("click", function() {
 				personImage.attr("data-still", results[i].images.fixed_height_still.url);
 				personImage.attr("data-animate", results[i].images.fixed_height.url);
 				personImage.attr("data-state", "still");
-                gifDiv.append(p);
-                gifDiv.append(personImage);
+				personImage.addClass("gif");
+
+			// image is appended to the div           
+				gifDiv.append(personImage);
+			// rating is appended to the div below the gif
+				gifDiv.append(p);
+			// new images will be place at the top of the page
                 $("#container").prepend(gifDiv);
-            };
+			};
+			
+// Click to animate - click to pause
+	$("#container").on("click", ".gif", function(event){
+event.preventDefault();
+
+		var state = $(this).attr("data-state");
+// toggle between animate and pause
+		if (state === "still") {
+			$(this).attr("src", $(this).attr("data-animate"));
+			$(this).attr("data-state", "animate");
+		}	else {
+			$(this).attr("src", $(this).attr("data-still"));
+			$(this).attr("data-state", "still");
+		}
+	})
           
         });
     });

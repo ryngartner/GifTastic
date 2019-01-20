@@ -6,7 +6,7 @@ var seinfeldCharacter = "";
 var buttonGenerator = function(){
 	$("#buttonArea").empty();
 	for(i = 0; i < seinfeld.length; i++) {
-		button = $("<button type=" + "button" + ">" + seinfeld[i] + "</button>").attr("data",seinfeld[i]);
+		button = $("<button type=" + "button" + ">" + seinfeld[i] + "</button>").attr("data-seinfeld",seinfeld[i]);
 		$("#buttonArea").append(button);
 	};
 }
@@ -23,11 +23,10 @@ $("#add-seinfeld").on("click", function(event){
 
 })
 
-$("button").on("click", function() {
+$(document).on("click", "button", function() {
   var person = $(this).attr("data-seinfeld");
-  
-  var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
-      person + "&api_key=dc6zaTOxFJmzC&limit=10";
+ 
+  var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + person + "&api_key=dc6zaTOxFJmzC&limit=10";
 
   $.ajax({
       url: queryURL,
@@ -79,7 +78,7 @@ event.preventDefault();
         });
 	});
 	
-// buttonGenerator();
+
 
 
 

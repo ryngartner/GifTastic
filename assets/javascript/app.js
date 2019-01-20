@@ -1,22 +1,22 @@
 
-var seinfeld = ["Newman"];
+var seinfeld = [];
 var button;
 var seinfeldCharacter = "";
 
 var buttonGenerator = function(){
-	$("#container").empty();
+	$("#buttonArea").empty();
 	for(i = 0; i < seinfeld.length; i++) {
 		button = $("<button type=" + "button" + ">" + seinfeld[i] + "</button>").addClass("btn btn-warning").attr("data",seinfeld[i]);
-		$("#container").append(button);
+		$("#buttonArea").append(button);
 	};
 }
 
 $("#add-seinfeld").on("click", function(event){
 	event.preventDefault();
-	console.log("#add-seinfeld");
+	// console.log("#add-seinfeld");s
 	seinfeldCharacter = $("#seinfeld-input").val();
 	seinfeld.push(seinfeldCharacter);
-	console.log(seinfeld);
+	// console.log(seinfeld);
 
 	buttonGenerator();
 
@@ -79,7 +79,7 @@ event.preventDefault();
         });
 	});
 	
-buttonGenerator();
+// buttonGenerator();
 
 
 
